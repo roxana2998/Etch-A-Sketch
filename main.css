@@ -1,0 +1,29 @@
+* {
+   box-sizing: border-box ;
+}
+
+
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+    
+    width: clamp(30rem, 10vw, 50rem);
+    height: clamp(30rem, 10vh, 50rem);
+}
+
+
+.cell-container {
+    border: 1px solid black;
+}
