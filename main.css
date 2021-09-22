@@ -14,16 +14,24 @@ h1 {
     text-align: center;
 }
 
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem auto;
+
+}
+
 .container {
     display: grid;
     grid-template-columns: repeat(16, 1fr);
-    grid-template-rows: repeat(16, 1fr);
-    
     width: clamp(30rem, 10vw, 50rem);
     height: clamp(30rem, 10vh, 50rem);
-}
-
-
-.cell-container {
+    margin: 2rem auto;
     border: 1px solid black;
+
 }
+
+
