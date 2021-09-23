@@ -1,37 +1,250 @@
+@font-face {
+    font-family: Caveat;
+    src: url(Caveat-VariableFont_wght.ttf);
+}
+
 * {
-   box-sizing: border-box ;
+    box-sizing: border-box;
 }
 
 
 body {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     margin: 0;
-    padding: 0;
+    background-image: linear-gradient(45deg, #D6D5F6, #C097AE);
 }
 
 h1 {
     text-align: center;
+    margin-top: 4rem;
+    font-family: "Caveat", sans-serif;
+    font-size: clamp(2rem, 5vw, 4rem);
 }
 
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
 
-main {
+.buttons-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 3rem auto;
+    margin: 0 2rem 6rem 2rem;
+    width: clamp(10rem, 10%, 30rem);
+}
 
+button {
+    margin: 1rem auto;
+    width: clamp(10rem, 30%, 30rem);
+    height: 3.5rem;
+    font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+    font-family: "Caveat", sans-serif;
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0 3px 4px 3px rgb(160, 158, 158);
+    cursor: pointer;
+}
+
+button:hover, button.active, .color-palette:hover, .color-palette:active {
+    transform: scale(1.2);
+    transition: 0.3s;
+}
+
+.color-palette {
+    margin: 1rem auto;
+    text-align: center;
+    font-family: "Caveat", sans-serif;
+    font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+    background-color: #A68692;
+    width: clamp(10rem, 30%, 30rem);
+    height: 3.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 3px 4px 3px rgb(160, 158, 158);
+    padding-top: 0.6rem;
+    color: white;
+}
+
+input[type="color"] {
+    -webkit-appearance: none;
+    border: none;
+    width: clamp(1rem, 3vw, 1.7rem);
+    height: clamp(1rem, 3vw, 1.7rem);
+    border-radius: 50%;
+    background: none;
+    cursor: pointer;
+}
+
+.black-button {
+    background-color: #262626;
+    color: white;
+}
+
+.color-button {
+    background-image: linear-gradient(to bottom, #8C4A5C, #D9BEA7);
+    color: white;
+}
+
+.grayscale {
+    background-color: rgb(160, 158, 158);
+    color: white;
+}
+
+.erase-button {
+    background-color: #D98982;
+    color: white;
+}
+
+.clear-button {
+    background-color: #463859;
+    color: white;
 }
 
 .container {
     display: grid;
     grid-template-columns: repeat(16, 1fr);
-    width: clamp(30rem, 10vw, 50rem);
-    height: clamp(30rem, 10vh, 50rem);
-    margin: 2rem auto;
-    border: 1px solid black;
-
+    width: clamp(40rem, 10vw, 60rem);
+    height: clamp(40rem, 10vh, 60rem);
+    margin: 2rem 2rem;
+    border: 3px inset #BF95AC;
 }
 
+.container-dimensions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
+.dimensions {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: clamp(30rem, 50vw, 50rem);
+    padding-bottom: 1rem;
+}
+
+.choose {
+    font-family: "Caveat", sans-serif;
+    font-size: clamp(1.3rem, 3.5vw, 1.8rem);
+    text-align: center;
+    align-self: flex-end;
+}
+
+.input-squares {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 2rem 0 2rem;
+}
+
+.number-squares {
+    font-family: "Caveat", sans-serif;
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    height: 1rem;
+}
+
+input[type="range"] {
+    cursor: pointer;
+    width: clamp(10rem, 8vw, 30rem);
+}
+
+/* -------------------------MEDIAS----------------- */
+
+@media (max-width: 1000px) {
+    .buttons-container {
+        width: clamp(10rem, 15vw, 30rem);
+        margin: 2rem 2rem 6rem 2rem;
+    }
+    button {
+        width: clamp(8rem, 20%, 25rem);
+        height: 3rem;
+    }
+    .color-palette {
+        width: clamp(8rem, 20%, 25rem);
+        height: 3rem;
+    }
+    .pick-color {
+        margin-bottom: 3rem;
+    }
+    input[type="color"] {
+        width: clamp(1rem, 3vw, 1.7rem);
+        height: 1.5rem;
+        margin-top: 0.4rem;
+    }
+    .container {
+        width: clamp(30rem, 10vw, 40rem);
+        height: clamp(30rem, 10vh, 40rem);
+    }
+}
+
+@media (max-width: 700px) {
+    .main-content {
+        flex-direction: column;
+    }
+    .container {
+        width: clamp(25rem, 80vw, 35rem);
+        height: clamp(25rem, 80vw, 35rem);
+    }
+    .buttons-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        width: clamp(20rem, 10vw, 30rem);
+        margin: 0;
+    }
+    button {
+        margin: 0 1rem;
+        width: clamp(8rem, 6vw, 15rem);
+        height: 2.5rem;
+    }
+    .color-palette {
+        width: clamp(8rem, 6vw, 15rem);
+        height: 2.5rem;
+        padding-top: 0.3rem;
+    }
+    input[type="color"] {
+        width: clamp(1rem, 5vw, 1.5rem);
+        height: clamp(1rem, 5vw, 1.5rem);
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 540px) {
+    .buttons-container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+    .color-palette {
+        padding-top: 0.3rem;
+    }
+    input[type="color"] {
+        width: clamp(1rem, 10vw, 1.6rem);
+        height: clamp(1rem, 10vw, 1.6rem);
+    }
+    .container {
+        width: 95vw;
+        height: 95vw;
+    }
+    .container-dimensions {
+        width: 100vw;
+    }
+    .choose {
+        margin-left: 1rem;
+    }
+    .dimensions {
+        width: clamp(15rem, 100vw, 30rem);
+        margin-bottom: 2rem;
+    }
+    .input-squares {
+        margin: 0 2rem 0.5rem 2rem;
+    }
+    input[type="range"] {
+        width: clamp(7rem, 10vw, 25rem);
+    }
+}

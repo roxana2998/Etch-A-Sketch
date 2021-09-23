@@ -12,19 +12,35 @@
     <h1>Etch-A-Sketch</h1>
 
     <main>
-        <div class="buttons-container">
-            <button class="clear-button">Clear sketch</button>
-            <button class="black-button">Black</button>
-            <button class="color-button">Random Color</button>
-            <button class="erase-button">Erase</button>
-            
-            <div>
-                <label for="color">Color</label>
-                <input class="change-color" type="color" id="color">
+        <div class="main-content">
+            <div class="buttons-container">
+                <div class="color-palette">
+                    <label class = "pick-color" for="color">Pick color</label>
+                    <input class="change-color" type="color" id="color">
+                </div>
+
+                <button class="color-button">Random color</button>
+                <button class="black-button">Black</button>
+                <button class="grayscale">Grayscale</button>
+                <button class="erase-button">Erase</button>
+                <button class="clear-button">Clear</button>
+ 
+            </div>
+        
+            <div class="container-dimensions">
+                <div class = "container"></div>
+                <div class="dimensions">
+                    <label class = "choose" for="change-dimensions">Choose dimensions</label>
+
+                    <div class="input-squares">
+                        <p class="number-squares">16x16</p>
+                        <input class = "change-input" type="range" min="16" max="100" id="change-dimensions">
+                    </div>
+                </div>
             </div>
         </div>
-        <div class = "container"></div>
-        <input class = "change-input" type="range" min="16" max="100">
+        
+       
 
     </main>
     
