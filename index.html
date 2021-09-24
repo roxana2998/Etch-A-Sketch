@@ -1,48 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Etch-A-Sketch</title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="main.css" />
     <script src="script.js" defer></script>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Etch-A-Sketch</h1>
 
     <main>
-        <div class="main-content">
-            <div class="buttons-container">
-                <div class="color-palette">
-                    <label class = "pick-color" for="color">Pick color</label>
-                    <input class="change-color" type="color" id="color">
-                </div>
-
-                <button class="color-button">Random color</button>
-                <button class="black-button">Black</button>
-                <button class="grayscale">Grayscale</button>
-                <button class="erase-button">Erase</button>
-                <button class="clear-button">Clear</button>
- 
-            </div>
-        
-            <div class="container-dimensions">
-                <div class = "container"></div>
-                <div class="dimensions">
-                    <label class = "choose" for="change-dimensions">Choose dimensions</label>
-
-                    <div class="input-squares">
-                        <p class="number-squares">16x16</p>
-                        <input class = "change-input" type="range" min="16" max="100" id="change-dimensions">
-                    </div>
-                </div>
-            </div>
+      <div class="buttons-container">
+        <div class="color-palette">
+          <label class="pick-color" for="color">Pick</label>
+          <input class="change-color" type="color" id="color" />
         </div>
-        
-       
 
+        <button class="color-button">Random</button>
+        <button class="black-button">Black</button>
+        <button class="grayscale">Grayscale</button>
+        <button class="erase-button">Erase</button>
+        <button class="clear-button">Clear</button>
+      </div>
+
+      <div class="table">
+        <div class="container"></div>
+        <div class="dimensions">
+          <label class="choose" for="change-dimensions"
+            >Choose dimensions</label
+          >
+
+          <div class="input-squares">
+            <p class="number-squares">16x16</p>
+            <input
+              class="change-input"
+              type="range"
+              min="16"
+              max="100"
+              id="change-dimensions"
+            />
+          </div>
+        </div>
+      </div>
     </main>
-    
-</body>
+  </body>
 </html>

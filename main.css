@@ -7,12 +7,13 @@
     box-sizing: border-box;
 }
 
-
 body {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
-    background-image: linear-gradient(45deg, #D6D5F6, #C097AE);
+    background-image: linear-gradient(45deg, #C097AE, #D6D5F6);
+    display: flex;
+    flex-direction: column;
 }
 
 h1 {
@@ -22,11 +23,12 @@ h1 {
     font-size: clamp(2rem, 5vw, 4rem);
 }
 
-.main-content {
+main {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
+    width: 100%;
 }
 
 .buttons-container {
@@ -34,19 +36,21 @@ h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 0 2rem 6rem 2rem;
-    width: clamp(10rem, 10%, 30rem);
+    width: 20%;
+    margin-bottom: 10rem;
 }
+
+/* ----------------------------------------BUTTONS STYLE */
 
 button {
     margin: 1rem auto;
     width: clamp(10rem, 30%, 30rem);
     height: 3.5rem;
-    font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+    font-size: clamp(1.5rem, 2.5vw, 1.8rem);
+    font-weight: bold;
     font-family: "Caveat", sans-serif;
     border: none;
     border-radius: 1rem;
-    box-shadow: 0 3px 4px 3px rgb(160, 158, 158);
     cursor: pointer;
 }
 
@@ -60,71 +64,83 @@ button:hover, button.active, .color-palette:hover, .color-palette:active {
     text-align: center;
     font-family: "Caveat", sans-serif;
     font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+    font-weight: bold;
     background-color: #A68692;
     width: clamp(10rem, 30%, 30rem);
     height: 3.5rem;
     border-radius: 1rem;
-    box-shadow: 0 3px 4px 3px rgb(160, 158, 158);
     padding-top: 0.6rem;
     color: white;
+    box-shadow: 0 2px 3px 3px #A68692;
 }
+
 
 input[type="color"] {
     -webkit-appearance: none;
     border: none;
-    width: clamp(1rem, 3vw, 1.7rem);
-    height: clamp(1rem, 3vw, 1.7rem);
-    border-radius: 50%;
+    width: clamp(2rem, 20%, 2.5rem);
+    height: clamp(2rem, 20%, 2.5rem);
     background: none;
     cursor: pointer;
+}
+
+.color-button {
+    /* background-color: #8C4A5C; */
+     background-image: linear-gradient(45deg, red, orange, rgb(236, 236, 7), green, rgb(3, 212, 212), blue, violet); 
+    color: white;
+    box-shadow: 0 2px 3px 3px grey;
 }
 
 .black-button {
     background-color: #262626;
     color: white;
-}
-
-.color-button {
-    background-image: linear-gradient(to bottom, #8C4A5C, #D9BEA7);
-    color: white;
+    box-shadow: 0 2px 3px 3px rgb(37, 36, 36);
 }
 
 .grayscale {
-    background-color: rgb(160, 158, 158);
+    background-color: rgb(143, 142, 142);
     color: white;
+    box-shadow: 0 2px 3px 3px rgb(143, 142, 142);
 }
 
 .erase-button {
     background-color: #D98982;
     color: white;
+    box-shadow: 0 2px 3px 3px #D98982;
 }
 
 .clear-button {
     background-color: #463859;
     color: white;
+    box-shadow: 0 2px 3px 3px #463859;
+}
+
+/* -------------------------------------------- */
+
+.table {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
 }
 
 .container {
     display: grid;
     grid-template-columns: repeat(16, 1fr);
-    width: clamp(40rem, 10vw, 60rem);
-    height: clamp(40rem, 10vh, 60rem);
-    margin: 2rem 2rem;
+    width: clamp(40rem, 40vw, 60rem);
+    height: clamp(40rem, 40vh, 60rem);
+    margin: 1rem;
     border: 3px inset #BF95AC;
 }
 
-.container-dimensions {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+/* --------------------------FOOTER */
 
 .dimensions {
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    width: clamp(30rem, 50vw, 50rem);
+    width: 100%;
     padding-bottom: 1rem;
 }
 
@@ -152,14 +168,15 @@ input[type="color"] {
 input[type="range"] {
     cursor: pointer;
     width: clamp(10rem, 8vw, 30rem);
+    height: 1.5rem;
 }
 
 /* -------------------------MEDIAS----------------- */
 
 @media (max-width: 1000px) {
     .buttons-container {
-        width: clamp(10rem, 15vw, 30rem);
-        margin: 2rem 2rem 6rem 2rem;
+        width: clamp(10rem, 10%, 30rem);
+        height: 70%;
     }
     button {
         width: clamp(8rem, 20%, 25rem);
@@ -169,49 +186,49 @@ input[type="range"] {
         width: clamp(8rem, 20%, 25rem);
         height: 3rem;
     }
-    .pick-color {
-        margin-bottom: 3rem;
-    }
     input[type="color"] {
-        width: clamp(1rem, 3vw, 1.7rem);
+        width: 1.5rem;
         height: 1.5rem;
-        margin-top: 0.4rem;
+        margin-top: 0.2rem;
     }
     .container {
-        width: clamp(30rem, 10vw, 40rem);
-        height: clamp(30rem, 10vh, 40rem);
+        width: clamp(30rem, 60vw, 40rem);
+        height: clamp(30rem, 60vw, 40rem);
     }
 }
 
 @media (max-width: 700px) {
-    .main-content {
-        flex-direction: column;
+    main {
+        display: grid;
+        justify-content: center;
+        align-items: center;
     }
     .container {
-        width: clamp(25rem, 80vw, 35rem);
-        height: clamp(25rem, 80vw, 35rem);
+        width: clamp(25rem, 85vw, 35rem);
+        height: clamp(25rem, 85vw, 35rem);
     }
     .buttons-container {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(2, 1fr);
-        width: clamp(20rem, 10vw, 30rem);
-        margin: 0;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 2rem;
+        justify-self: center;
+        width: 60%;
     }
     button {
-        margin: 0 1rem;
         width: clamp(8rem, 6vw, 15rem);
         height: 2.5rem;
+        margin: 1rem;
     }
     .color-palette {
         width: clamp(8rem, 6vw, 15rem);
         height: 2.5rem;
         padding-top: 0.3rem;
     }
-    input[type="color"] {
-        width: clamp(1rem, 5vw, 1.5rem);
-        height: clamp(1rem, 5vw, 1.5rem);
-        margin: 0 auto;
+    input[type="range"] {
+        height: 1rem;
     }
 }
 
@@ -220,31 +237,15 @@ input[type="range"] {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(3, 1fr);
     }
-    .color-palette {
-        padding-top: 0.3rem;
-    }
-    input[type="color"] {
-        width: clamp(1rem, 10vw, 1.6rem);
-        height: clamp(1rem, 10vw, 1.6rem);
-    }
     .container {
         width: 95vw;
         height: 95vw;
-    }
-    .container-dimensions {
-        width: 100vw;
     }
     .choose {
         margin-left: 1rem;
     }
     .dimensions {
         width: clamp(15rem, 100vw, 30rem);
-        margin-bottom: 2rem;
-    }
-    .input-squares {
-        margin: 0 2rem 0.5rem 2rem;
-    }
-    input[type="range"] {
-        width: clamp(7rem, 10vw, 25rem);
+        padding-bottom: 2rem;
     }
 }
